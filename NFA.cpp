@@ -14,10 +14,10 @@ int main() {
             {
 
             if(s[i] == 'b')
-                state = 1;
+                state = 0;
 
             else if (s[i] == 'a')
-                state = 2;
+                state = 1;
 
             else{
                 cout << "Rejected";
@@ -30,10 +30,10 @@ int main() {
             {
 
             if(s[i] == 'a')
-                state = 0;
+                state = 1;
 
               else if(s[i] == 'b')
-                state = 1;
+                state = 3;
 
             else{
                 cout << "Rejected";
@@ -44,11 +44,8 @@ int main() {
         else if(state == 2)
             {
 
-            if(s[i] == 'a')
-                state = 3;
-
-            else if(s[i] == 'b')
-                state = 1;
+            if(s[i] == 'b')
+                state = 0;
 
             else{
                 cout << "Rejected";
@@ -62,7 +59,20 @@ int main() {
             {
 
             if(s[i] == 'a')
-                state = 3;
+                state = 4;
+
+            else{
+                cout << "Rejected";
+
+            return 0;
+            }
+        }
+
+        else if(state == 4)
+            {
+
+            if(s[i] == 'a')
+                state = 1;
 
             else if(s[i] == 'b')
                 state = 1;
@@ -75,7 +85,7 @@ int main() {
         }
     }
 
-       if(state == 3)
+       if(state == 1)
 
         cout << "Accepted";
 
